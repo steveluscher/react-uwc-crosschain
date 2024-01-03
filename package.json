@@ -1,5 +1,5 @@
 {
-  "name": "universal-wallets-2",
+  "name": "react-uwc-crosschain",
   "private": true,
   "scripts": {
     "build": "turbo build",
