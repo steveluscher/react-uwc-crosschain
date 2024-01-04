@@ -1,14 +1,18 @@
 "use client";
 
-import { EthWalletNames, useEth } from "@ada-anvil/react-uwc-crosschain/eth";
+import { useEth } from "@ada-anvil/react-uwc-crosschain/eth";
+import { useSol } from "@ada-anvil/react-uwc-crosschain/sol";
 
 import Image from "next/image";
 
 export default function Page(): JSX.Element {
   const { initializing, wallet, wallets, select, getAddress, getBalance } =
-    useEth({ autoConnect: true });
+    useSol({
+      autoConnect: true,
+      endpoint: process.env.NEXT_PUBLIC_SOL_RPC,
+    });
 
-  const onClick = async (walletName: EthWalletNames) => {
+  const onClick = async (walletName: any) => {
     await select(walletName);
   };
 

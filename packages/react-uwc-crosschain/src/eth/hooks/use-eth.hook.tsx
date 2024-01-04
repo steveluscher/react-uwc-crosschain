@@ -12,6 +12,7 @@ import metamaskMedia from "../../commons/medias/metamask.media";
 import { EvmChainId, EvmWallet, EvmWalletNames } from "../../evm/types";
 import phantomMedia from "../../commons/medias/phantom.media";
 import { parseAdapter } from "../../commons/medias/utils/parse-adapter.util";
+import exodusMedia from "../../commons/medias/exodus.media";
 
 const WALLET_STORAGE_KEY = "uv-eth-wallet";
 
@@ -28,6 +29,12 @@ const SUPPORTED_WALLETS: EvmWallet[] = [
     name: EvmWalletNames.Phantom,
     icon: `data:image/svg+xml;utf8,${encodeURIComponent(phantomMedia)}`,
     adapter: parseAdapter("phantom.ethereum"),
+    installed: false,
+  },
+  {
+    name: EvmWalletNames.Exodus,
+    icon: `data:image/svg+xml;utf8,${encodeURIComponent(exodusMedia)}`,
+    adapter: parseAdapter("exodus.solana"),
     installed: false,
   },
 ];

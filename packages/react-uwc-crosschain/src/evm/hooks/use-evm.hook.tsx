@@ -151,6 +151,7 @@ const useEvm = (props: UseEvmProps) => {
     const wallet = wallets.find((w) => w.name === name);
 
     if (!wallet) throw new Error("Wallet not found");
+    if (!wallet.installed) throw new Error("Wallet not installed");
 
     adapter.current = wallet.adapter;
     provider.current = null;

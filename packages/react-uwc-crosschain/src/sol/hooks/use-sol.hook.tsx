@@ -21,6 +21,8 @@ import {
 import nufiMedia from "../medias/nufi.media";
 import { parseAdapter } from "../../commons/medias/utils/parse-adapter.util";
 import phantomMedia from "../../commons/medias/phantom.media";
+import coinbaseMedia from "../../commons/medias/coinbase.media";
+import exodusMedia from "../../commons/medias/exodus.media";
 
 const WALLET_STORAGE_KEY = "uv-sol-wallet";
 
@@ -35,6 +37,18 @@ const SUPPORTED_WALLETS: SolWallet[] = [
     name: SolWalletNames.NuFi,
     icon: `data:image/svg+xml;utf8,${encodeURIComponent(nufiMedia)}`,
     adapter: parseAdapter("nufiSolana"),
+    installed: false,
+  },
+  {
+    name: SolWalletNames.CoinBase,
+    icon: `data:image/svg+xml;utf8,${encodeURIComponent(coinbaseMedia)}`,
+    adapter: parseAdapter("coinbaseSolana"),
+    installed: false,
+  },
+  {
+    name: SolWalletNames.Exodus,
+    icon: `data:image/svg+xml;utf8,${encodeURIComponent(exodusMedia)}`,
+    adapter: parseAdapter("exodus.solana"),
     installed: false,
   },
 ];
@@ -104,6 +118,7 @@ const useSol = (props?: UseSolProps) => {
     const wallet = wallets.find((w) => w.name === name);
 
     if (!wallet) throw new Error("Wallet not found");
+    if (!wallet.installed) throw new Error("Wallet not installed");
 
     adapter.current = wallet.adapter;
 

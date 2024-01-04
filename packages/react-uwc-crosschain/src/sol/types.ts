@@ -32,6 +32,8 @@ export type SolAdapter = {
 export enum SolWalletNames {
   Phantom = "Phantom",
   NuFi = "NuFi",
+  CoinBase = "CoinBase",
+  Exodus = "Exodus",
 }
 
 export type SolWallet = {

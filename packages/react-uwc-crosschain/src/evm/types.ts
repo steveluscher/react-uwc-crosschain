@@ -21,6 +21,7 @@ export type EvmAdapter = Eip1193Provider & {
 export enum EvmWalletNames {
   Metamask = "Metamask",
   Phantom = "Phantom",
+  Exodus = "Exodus",
 }
 
 export type EvmWallet = {
