@@ -1,6 +1,6 @@
 {
   "name": "@ada-anvil/react-uwc-crosschain",
-  "version": "1.0.5",
+  "version": "1.0.7",
   "license": "CC BY-NC 4.0",
   "keywords": [
     "react",
@@ -12,6 +12,10 @@
     "solana",
     "ethereum",
     "matic"
+  ],
+  "files": [
+    "dist",
+    "src"
   ],
   "exports": {
     "./eth": {
@@ -35,7 +39,7 @@
   },
   "scripts": {
     "dev": "bun run ./watch.js --watch",
-    "package:publish": "npm run build && npm publish --access public",
+    "package:publish": "bun run package:build && npm publish --access public",
     "package:build": "bun run ./build.js && bun run build:declaration",
     "build:declaration": "tsc --emitDeclarationOnly --project tsconfig.types.json"
   },
