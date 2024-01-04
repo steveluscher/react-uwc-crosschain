@@ -13,7 +13,7 @@ import { EvmChainId, EvmWallet, EvmWalletNames } from "../../evm/types";
 import phantomMedia from "../../commons/medias/phantom.media";
 import { parseAdapter } from "../../commons/medias/utils/parse-adapter.util";
 
-const WALLET_STORAGE_KEY = "uv-eth-wallet";
+const WALLET_STORAGE_KEY = "uv-matic-wallet";
 
 const CHAIN_ID = EvmChainId.MATIC;
 

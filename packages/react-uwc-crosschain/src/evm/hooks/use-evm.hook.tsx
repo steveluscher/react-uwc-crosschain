@@ -266,7 +266,7 @@ const useEvm = (props: UseEvmProps) => {
 
     const tx = await signer.current.sendTransaction({ to, value });
 
-    return tx;
+    return tx.hash;
   };
 
   const getBalance = async (params?: EvmGetBalanceParams) => {
@@ -288,7 +288,7 @@ const useEvm = (props: UseEvmProps) => {
         throw new Error("Evmers contract implemantation not found");
 
       const decimals = await contract.decimals();
-      const unformattedBalance = await contract.balanceOf(
+      const unformattedBalance: number = await contract.balanceOf(
         signer.current.address
       );
 
@@ -298,7 +298,7 @@ const useEvm = (props: UseEvmProps) => {
 
     const balance = await provider.current.getBalance(signer.current.address);
     if (formatted) return formatEther(balance);
-    return balance;
+    return Number(balance);
   };
 
   const getAddress = async (params: EvmGetAddressParams) => {

@@ -41,16 +41,18 @@ export type SolWallet = {
   installed: boolean;
 };
 
-export type SolTokenOptions = { token?: { address: string } };
-
 export type SolSendParams = {
   to: string;
   amount: number;
-} & SolTokenOptions;
+  token?: {
+    address: string;
+  };
+};
 
 export type SolGetBalanceParams = {
   formatted?: boolean;
-} & SolTokenOptions;
+  token?: { address: string | undefined };
+};
 
 export type SolWalletState = {
   name: SolWalletNames;

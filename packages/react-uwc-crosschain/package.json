@@ -15,18 +15,21 @@
   ],
   "exports": {
     "./eth": {
-      "types": "./dist/eth/index.ts",
+      "types": "./dist/eth/types.ts",
       "import": "./dist/eth/index.js",
+      "require": "./dist/eth/index.js",
       "default": "./src/eth/index.ts"
     },
     "./sol": {
-      "types": "./dist/sol/index.ts",
+      "types": "./dist/sol/types.ts",
       "import": "./dist/sol/index.js",
+      "require": "./dist/sol/index.js",
       "default": "./src/sol/index.ts"
     },
     "./matic": {
-      "types": "./dist/matic/index.ts",
+      "types": "./dist/matic/types.ts",
       "import": "./dist/matic/index.js",
+      "require": "./dist/matic/index.js",
       "default": "./src/matic/index.ts"
     }
   },
