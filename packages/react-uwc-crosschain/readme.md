@@ -15,9 +15,9 @@ Welcome to the documentation for the React Universal Wallet Connector - Crosscha
 Before installing your-react-blockchain-package, make sure to install the following peer dependencies:
 
 ```bash
-npm install react @solana/spl-token @solana/web3.js ethers jotai
+npm install react @solana/spl-token @solana/web3.js@1 ethers jotai
 # or
-yarn add react @solana/spl-token @solana/web3.js ethers jotai
+yarn add react @solana/spl-token @solana/web3.js@1 ethers jotai
 ```
 
 Now, you can install your-react-blockchain-package:
